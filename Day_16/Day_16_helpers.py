@@ -2,7 +2,7 @@ import re
 
 def createRule(line):
     # Line looks like: class: 1-3 or 5-7
-    name = re.search(r'[a-z]+', line)[0]
+    name = re.search(r'^.*:', line)[0]
     parsedRanges = re.findall(r'[0-9]+-[0-9]+', line) # There's always two ranges
     ranges = []
     for r in parsedRanges:
